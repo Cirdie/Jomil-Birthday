@@ -12,14 +12,14 @@
     import { getDatabase, ref, push, onValue, get } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
     const firebaseConfig = {
-      apiKey: "AIzaSyCbTuuntOnJfEo2W1_qPZi4eY_1IzHztZg",
-      authDomain: "jingGraduation Party-fbea2.firebaseapp.com",
-      projectId: "jingGraduation Party-fbea2",
-      storageBucket: "jingGraduation Party-fbea2.firebasestorage.app",
-      messagingSenderId: "1075155310360",
-      appId: "1:1075155310360:web:50d607a02348023116706d"
-    };
-
+  apiKey: "AIzaSyCbTuuntOnJfEo2W1_qPZi4eY_1IzHztZg",
+  authDomain: "jingbirthday-fbea2.firebaseapp.com",
+  databaseURL: "https://jingbirthday-fbea2-default-rtdb.firebaseio.com",
+  projectId: "jingbirthday-fbea2",
+  storageBucket: "jingbirthday-fbea2.firebasestorage.app",
+  messagingSenderId: "1075155310360",
+  appId: "1:1075155310360:web:50d607a02348023116706d"
+};
     const app = initializeApp(firebaseConfig);
     const db  = getDatabase(app);
 
