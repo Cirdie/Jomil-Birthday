@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jomil's Birthday 🎉</title>
+  <title>Jomil's Graduation Party 🎉</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
   <!-- Firebase SDK -->
@@ -13,9 +13,9 @@
 
     const firebaseConfig = {
       apiKey: "AIzaSyCbTuuntOnJfEo2W1_qPZi4eY_1IzHztZg",
-      authDomain: "jingbirthday-fbea2.firebaseapp.com",
-      projectId: "jingbirthday-fbea2",
-      storageBucket: "jingbirthday-fbea2.firebasestorage.app",
+      authDomain: "jingGraduation Party-fbea2.firebaseapp.com",
+      projectId: "jingGraduation Party-fbea2",
+      storageBucket: "jingGraduation Party-fbea2.firebasestorage.app",
       messagingSenderId: "1075155310360",
       appId: "1:1075155310360:web:50d607a02348023116706d"
     };
@@ -40,7 +40,7 @@
       // ── Duplicate name check ──
       showStatus("⏳ Checking name...", "");
       try {
-        const snapshot = await get(ref(db, "jomil_birthday_rsvps"));
+        const snapshot = await get(ref(db, "jomil_Graduation Party_rsvps"));
         if (snapshot.exists()) {
           const entries = Object.values(snapshot.val());
           const duplicate = entries.find(e => e.name && e.name.toLowerCase() === name.toLowerCase());
@@ -54,7 +54,7 @@
         return;
       }
 
-      const rsvpRef = ref(db, "jomil_birthday_rsvps");
+      const rsvpRef = ref(db, "jomil_Graduation Party_rsvps");
       push(rsvpRef, {
         name, hasGF,
         bringing: { duyan, tent, others: others ? othersText : false },
@@ -80,7 +80,7 @@
 
     /* ── Load RSVPs ── */
     function loadRSVPs() {
-      const rsvpRef = ref(db, "jomil_birthday_rsvps");
+      const rsvpRef = ref(db, "jomil_Graduation Party_rsvps");
       onValue(rsvpRef, (snapshot) => {
         const data    = snapshot.val();
         const list    = document.getElementById("rsvpList");
@@ -146,7 +146,7 @@
       document.body.style.overflow = "";
     };
 
-    /* ── Birthday Popup ── */
+    /* ── Graduation Party Popup ── */
     window.openBdayPopup = function(name) {
       document.getElementById("bdayPopupName").textContent = name + "!";
       const specialMsg = document.getElementById("bdaySpecialMsg");
@@ -255,7 +255,7 @@ body::before {
   background: linear-gradient(90deg, white, #ffd6dc, white);
 }
 
-.birthday-badge {
+.Graduation Party-badge {
   display: inline-block;
   margin-bottom: 18px;
   padding: 8px 18px;
@@ -974,8 +974,8 @@ input[type="checkbox"] {
     <!-- Header -->
     <div class="header">
       <div class="wave-deco"></div>
-      <div class="birthday-badge">🎂 You're Invited!</div>
-      <h1>Jomil's <span>Birthday</span></h1>
+      <div class="Graduation Party-badge">🎂 You're Invited!</div>
+      <h1>Jomil's <span>Graduation Party</span></h1>
       <div class="emojis">🎉🌴🏖️🎊</div>
     </div>
 
@@ -1086,7 +1086,7 @@ input[type="checkbox"] {
   </div>
 </div>
 
-<!-- ✨ Birthday Success Popup -->
+<!-- ✨ Graduation Party Success Popup -->
 <div id="bdayPopup" role="dialog" aria-modal="true">
   <div class="bday-backdrop" onclick="closeBdayPopup()"></div>
   <div class="bday-box">
@@ -1096,7 +1096,7 @@ input[type="checkbox"] {
       <span class="bday-emoji">🎉</span>
       <div class="bday-title">
         See you at my
-        <span>Birthday! 🎂</span>
+        <span>Graduation Party! 🎂</span>
       </div>
       <p class="bday-greeting">You're on the list, <span class="bday-name" id="bdayPopupName"></span></p>
       <p class="bday-sub">We can't wait to celebrate with you</p>
